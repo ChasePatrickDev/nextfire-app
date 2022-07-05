@@ -1,5 +1,6 @@
 import PostContent from "../../components/PostContent";
 import { firestore, getUserWithUsername, postToJSON } from "../../lib/firebase";
+import MetaTags from "../../components/Metatags";
 
 export async function getStaticProps({ params }) {
   const { getUserWithUsername, slug } = params;
@@ -49,6 +50,7 @@ export default function Post(props) {
   const post = realtimePost || props.post;
   return (
     <main className={styles.container}>
+      <MetaTags title={post.title} />
       <section>
         <PostContent post={post} />
       </section>
