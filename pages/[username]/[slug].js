@@ -5,7 +5,7 @@ import { useDocumentData } from "react-firebase-hooks/firestore";
 import styles from "../../styles/Post.module.css";
 import HeartButton from "../../components/HeartButton";
 import AuthCheck from "../../components/AuthCheck";
-import Link from "next/Link";
+import Link from "next/link";
 
 export async function getStaticProps({ params }) {
   const { username, slug } = params;

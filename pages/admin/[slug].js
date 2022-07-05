@@ -9,7 +9,7 @@ import { useRouter } from "next/router";
 import { useDocumentData } from "react-firebase-hooks/firestore";
 import { useForm } from "react-hook-form";
 import ReactMarkdown from "react-markdown";
-import Link from "next/Link";
+import Link from "next/link";
 import Toast from "react-hot-toast";
 
 export default function AdminPostsEdit(props) {
