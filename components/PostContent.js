@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/Link";
 import ReactMarkdown from "react-markdown";
 
 //UI component for main post content
