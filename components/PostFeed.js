@@ -31,6 +31,16 @@ function PostItem({ post, admin = false }) {
         </span>
         <span>💗 {post.heartCount} Hearts</span>
       </footer>
+      {/* If admin view, show extra controls for user */}
+      {admin && (
+        <>
+          <Link href={`/admin/${post.slug}`}>
+            <h3>
+              <button className="btn-blue">Edit Post</button>
+            </h3>
+          </Link>
+        </>
+      )}
     </div>
   );
 }

@@ -5,7 +5,7 @@ import PostFeed from "../components/PostFeed";
 import MetaTags from "../components/Metatags";
 
 //Max post to query per page
-const LIMIT = 1;
+const LIMIT = 5;
 
 export async function getServerSideProps(context) {
   const postsQuery = firestore
@@ -27,6 +27,7 @@ export default function Home(props) {
 
   const [postsEnd, setPostsEnd] = useState(false);
 
+  //get next page of posts
   const getMorePosts = async () => {
     setLoading(true);
     const last = posts[posts.length - 1];
@@ -37,7 +38,7 @@ export default function Home(props) {
 
     const query = firestore
       .collectionGroup("posts")
-      .where("published", "==, true")
+      .where("published", "==", true)
       .orderBy("createdAt", "desc")
       .startAfter(cursor)
       .limit(LIMIT);

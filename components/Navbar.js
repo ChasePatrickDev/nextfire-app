@@ -21,7 +21,7 @@ export default function Navbar() {
           <>
             <li className="push-left">
               <Link href="/admin">
-                <button className="btn-blue">Write Posts</button>
+                <button className="btn-blue">Manage Posts</button>
               </Link>
             </li>
             <li>
